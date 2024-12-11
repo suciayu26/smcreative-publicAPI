@@ -1,0 +1,28 @@
+<%- include('../layouts/layout', { body: `
+    <section class="text-center py-5">
+      <h1 class="display-4 fw-bold">Get Started with S&M Creative</h1>
+      <p class="lead mb-4">
+        Fill out the form below to kickstart your journey with us. Let’s scale and multiply your business success together!
+      </p>
+      <form class="container" action="/get-started" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Your Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="whatsaap number" class="form-label">Your Whatsapp Number</label>
+          <input type="whatsapp" class="form-control" id="whatsapp" name="whatsapp" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">How Can We Help?</label>
+          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </section>
+  ` }) %>
+  

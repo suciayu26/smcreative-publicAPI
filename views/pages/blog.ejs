@@ -1,0 +1,37 @@
+<%- include('../layouts/layout', { body: `
+  <section class="text-center py-5">
+    <h1 class="display-4 fw-bold">S&M Creative Blog</h1>
+    <p class="lead mb-4">Insights, strategies, and tips to help your business scale and thrive in the digital world.</p>
+    
+    <!-- Blog List Section -->
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Blog Post 1 -->
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h3 class="card-title"><a href="/blog/1" class="text-decoration-none text-success">Why Digital Marketing Matters</a></h3>
+              <p class="card-text">Learn why digital marketing is critical for SMEs.</p>
+            </div>
+            <div class="card-footer">
+              <a href="/blog/1" class="btn btn-outline-success w-100">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Blog Post 2 -->
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h3 class="card-title"><a href="/blog/2" class="text-decoration-none text-success">Start with Content Marketing</a></h3>
+              <p class="card-text">The key to building your brand!</p>
+            </div>
+            <div class="card-footer">
+              <a href="/blog/2" class="btn btn-outline-success w-100">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+` }) %>
