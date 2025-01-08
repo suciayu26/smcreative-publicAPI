@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     const response = await axios.get('https://newsapi.org/v2/top-headlines', {
       params: {
-        apiKey: '1e7a23b3729f4ad1ba2820360d51a2f1',
+        apiKey: 'process.env.API_KEY',
         country: 'us', // or any valid country code
         category: 'business',
       },
