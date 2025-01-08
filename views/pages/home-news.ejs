@@ -1,0 +1,27 @@
+<section class="news-section my-5">
+    <div class="container">
+      <h2 class="text-center section-title">Latest Business News</h2>
+      <% if (articles && articles.length > 0) { %>
+        <ul class="list-group">
+          <% articles.forEach(article => { %>
+            <li class="list-group-item">
+              <% if (article.urlToImage) { %>
+                <img
+                  src="<%= article.urlToImage %>"
+                  alt="News Image"
+                  class="news-image"
+                />
+              <% } %>
+              <a href="<%= article.url %>" target="_blank" class="text-decoration-none">
+                <h5 class="mb-1"><%= article.title %></h5>
+              </a>
+              <p class="mb-0"><%= article.description || "No description available." %></p>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p class="text-center">No news articles are available at the moment.</p>
+      <% } %>
+    </div>
+</section>
+  

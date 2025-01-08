@@ -2,8 +2,10 @@ import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
 import blogRoutes from './routes/blog.js'; // Import blog routes
+import newsRoutes from './routes/news.js'; // import news routes
 
 const app = express();
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -11,8 +13,14 @@ app.use(express.static(path.resolve('./public'))); // Use path.resolve for ES Mo
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views')); // Adjust views path
 
+
 // Routes
+app.use('/news', newsRoutes);
 app.use('/blog', blogRoutes);
+
+app.get('/', (req, res) => {
+  res.redirect('/news')
+});
 
 // Route for "How We Partner"
 app.get('/how-we-partner', (req, res) => {
@@ -22,10 +30,6 @@ app.get('/how-we-partner', (req, res) => {
 // Route for "Package and Pricelist"
 app.get('/package-and-pricelist', (req, res) => {
   res.render('pages/package-and-pricelist', { title: 'Package and Pricelist' });
-});
-
-app.get('/', (req, res) => {
-  res.render('pages/home', { title: 'Welcome to S&M Creative' });
 });
 
 // GET route to serve the contact form
